@@ -9,14 +9,17 @@
 
 int (*get_print_func(char *c))(va_list args)
 {
-	ops_t ops[] = {
+	op_t ops[] = {
 		{"c", print_char},
 		{"s", print_str},
 		{NULL, NULL}
 	};
+	int i;
+
+	i = 0;
 	while (i < 3)
 	{
-		if (strcmp(ops[i].op, c) == 0)
+		if (c[0] == ops[i].op[0])
 			return (ops[i].f);
 		i++;
 	}

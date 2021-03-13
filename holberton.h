@@ -13,7 +13,7 @@ int _printf(const char *format, ...);
 typedef struct op
 {
 	char *op;
-	int (*f)(char *str);
+	int (*f)(va_list args);
 } op_t;
 
 int (*get_print_func(char *c))(va_list args); 

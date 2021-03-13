@@ -10,34 +10,32 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0;
-	char *str;
-	char *c;
-	
+	int i = 0, j = 0;
+	int (*get_ptr)(va_list);
+	char *c = NULL;
+
 	va_start(args, format);
 
 	while (format && format[i])
 	{
 		if (format[i] != '%')
 		{
-			c = (char)format[i];
-			_putchar(c);
+			_putchar(format[i]);
 			i++;
 		}
 		else 
 		{
 			i++;
-			c = (char)format[i];
+			c[j] = (char)format[i];
 			/*Function to check specifier and run correct print*/
 			get_ptr =  get_print_func(c);
 			if (get_ptr == NULL)
 			{
-				b = (char)format[i - 1];
 				if (c == '\0')
-					_putchar(b);
+					_putchar(format[i - 1]);
 					break;
-				_putchar(b);
-				_putchar(c);
+				_putchar(format[i - 1]);
+				_putchar(format[i]);
 				i++;
 			}
 			else
@@ -48,5 +46,5 @@ int _printf(const char *format, ...)
 			}
 		}
 	}
-	return (0) /*Supposed to be the length*/
+	return (0); /*Supposed to be the length*/
 }

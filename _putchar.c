@@ -6,7 +6,7 @@
   * 
   * Return: 0 on success
   */
-int _putchar(char c)
+int _putchar(int c)
 {
 	char a[1];
 	a[0] = (char)c;
