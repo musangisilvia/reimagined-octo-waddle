@@ -1,0 +1,17 @@
+.TH _PRINTF 1 "March 2021" "Musangi & Tuva version 1.0" "User Commands"
+.hy
+.SH NAME
+.PP
+_printf - formats and prints data. Similar to 
+.B "PRINTF" 
+in c.
+.PP
+.SH SYNOPSIS
+\#inlcude "holberton.h"
+.hy
+int _printf(const char *format, ...);
+.SH DESCRIPTION
+.PP
+_printf produces output according to a format to a
+.I format.
+
