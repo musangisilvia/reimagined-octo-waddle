@@ -21,11 +21,11 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			i++;
 		}
-		else 
+		else
 		{
 			i++;
 			/*Function to check specifier and run correct print*/
-			get_print_func(format[i],format[i - 1], args);
+			get_print_func(format[i], format[i - 1], args);
 			i++;
 		}
 	}

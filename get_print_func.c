@@ -2,14 +2,15 @@
 
 /**
   * get_print_func - Get the correct print function and return a pointer to it
-  * @c: The specifier
+  * @c: The specifier or current character
+  * @b: The previous character
+  * @args: List of arguments
   *
   * Return: Pointer to correct print function
   */
 
 int get_print_func(char c, char b, va_list args)
 {
-	
 	switch (c)
 	{
 		case 'c':
@@ -19,8 +20,11 @@ int get_print_func(char c, char b, va_list args)
 			print_str(args);
 			break;
 		case '%':
-			_putchar(b);
 			_putchar(c);
+			break;
+		case 'd':
+		case 'i':
+			print_num(args);
 			break;
 		default:
 			_putchar(b);
