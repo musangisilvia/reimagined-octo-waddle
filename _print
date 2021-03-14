@@ -32,8 +32,33 @@ The arguments must correspond properly with the conversion specifier. By default
 .B Conversion specifiers
 .RS
 A character that specifies the type of conversion to be applied. The conversion specifiers and their meanings are:
+.PP
 .RS
 .B d, i
+.RS
 The int argument is converted to signed decimal notation.
+.RE
+
+.PP
 .RS i
+.B c
+.RS
+If no l is present, the
+.I int
+argument is converted into an
+.I unsigned char
+and the resulting character is written.
+.RE
+
+.PP
+.RS i
+.B s
+.RS
+If no l modifier is present:
+.I const char *
+argument is expected to be a pointer to an array of te character is
+written. Characters from the array are written up to (but not including)
+a terminating null byte ('\\0');
+.RE
+.RE
 
