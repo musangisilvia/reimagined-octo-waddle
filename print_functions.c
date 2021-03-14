@@ -23,12 +23,12 @@ int _putchar(int c)
   * Return: 0;
   */
 
-int print_num(va_list args)
+int print_num(va_list args, int len)
 {
 	int n  = va_arg(args, int);
 
-	putchar_int(n);
-	return (0);
+	len = putchar_int(n, len);
+	return (len);
 }
 
 
@@ -38,12 +38,12 @@ int print_num(va_list args)
   *
   * Return: Not sure yet
   */
-int print_char(va_list args)
+int print_char(va_list args, int len)
 {
 	int c = va_arg(args, int);
 
-	_putchar(c);
-	return (0);
+	len += _putchar(c);
+	return (len);
 }
 
 
@@ -53,16 +53,16 @@ int print_char(va_list args)
   *
   * Return: Not sure yet
   */
-int print_str(va_list args)
+int print_str(va_list args, int len)
 {
 	char *str = va_arg(args, char *);
 
 	if (str == NULL)
 		str = "(null)";
 	while (*str)
-		_putchar(*str++);
+		len += _putchar(*str++);
 
-	return (0);
+	return (len);
 }
 
 
@@ -71,16 +71,17 @@ int print_str(va_list args)
   * @n: Number
   *
   */
-void putchar_int(int n)
+int putchar_int(int n, int len)
 {
 	if (n < 0)
 	{
-		_putchar('-');
+		len += _putchar('-');
 		n = -n;
 	}
 
 	if (n / 10)
-		putchar_int(n / 10);
+		putchar_int(n / 10, len);
 
-	_putchar((n % 10) + '0');
+	len += _putchar((n % 10) + '0');
+	return (len);
 }

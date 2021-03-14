@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0;
+	int i = 0, len = 0;
 
 	va_start(args, format);
 
@@ -18,16 +18,16 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			_putchar(format[i]);
+			len += _putchar(format[i]);
 			i++;
 		}
 		else
 		{
 			i++;
 			/*Function to check specifier and run correct print*/
-			get_print_func(format[i], format[i - 1], args);
+			len = get_print_func(format[i], format[i - 1], args, len);
 			i++;
 		}
 	}
-	return (0); /*Supposed to be the length*/
+	return (len - 1); /*Supposed to be the length*/
 }
