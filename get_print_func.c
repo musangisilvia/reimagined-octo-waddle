@@ -18,8 +18,10 @@ int get_print_func(char c, char b, va_list args)
 		case 's':
 			print_str(args);
 			break;
+		case 'd':
+			print_int(arg);
+			break;
 		case '%':
-			_putchar(b);
 			_putchar(c);
 			break;
 		default:
