@@ -18,8 +18,12 @@ _printf produces output according to a
 .B Format of the format String.
 .RS
 The format string is a character string that may begin or end in it's initial shift state, if any. It is composed of zero or more directives. These are:
+.br
 .B oridnary characters that are not ( % ) \- copied to the system unchanged,
+.br
 .B conversion specifications \- result in fetching zero or more subsequent arguments.
+.br
+
 .B Conversion Specifications
 are introduced using the character
 .I %
@@ -49,6 +53,7 @@ argument is converted into an
 .I unsigned char
 and the resulting character is written.
 .RE
+.RE
 
 .PP
 .RS i
@@ -61,4 +66,35 @@ written. Characters from the array are written up to (but not including)
 a terminating null byte ('\\0');
 .RE
 .RE
+
+.SH EXIT STATUS
+.PP
+The program exits conventionally with a status of 0 when successful and 1 when theres an error.
+
+.SH BUGS
+The program can only correctly identify 4 format specifiers at the moment. Any other format specifier will cause unexpected behaviour.
+
+.SH AUTHORS
+.PP
+.RS
+NAME:
+.B Silvia Musangi
+.RS i
+EMAIL:
+.B musangisilvia@gmail.com
+.RE
+.RE
+
+.PP
+.RS
+NAME:
+.B Alfred Tuva
+.RS i
+EMAIL:
+.B muindetuva@gmail.com
+.RE
+.RE
+
+.SH COPYRIGHT
+Copyright (c) 2021
 
