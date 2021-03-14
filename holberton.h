@@ -13,7 +13,10 @@ int print_char(va_list, int);
 int print_str(va_list, int);
 int print_num(va_list, int);
 int putchar_int(int, int);
-int print_bin(va_list args, int len);
-int print_bin_num(int n, int len);
+<<<<<<< HEAD
 
+=======
+int print_unsigned(va_list, int);
+int print_binary(int, int);
+>>>>>>> ce0419f0b14c8d917315b58e968b8e0d3d675003
 #endif
