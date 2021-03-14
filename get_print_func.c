@@ -2,32 +2,35 @@
 
 /**
   * get_print_func - Get the correct print function and return a pointer to it
-  * @c: The specifier
+  * @c: The specifier or current character
+  * @b: The previous character
+  * @args: List of arguments
   *
   * Return: Pointer to correct print function
   */
 
-int get_print_func(char c, char b, va_list args)
+int get_print_func(char c, char b, va_list args, int len)
 {
-	
 	switch (c)
 	{
 		case 'c':
-			print_char(args);
+			len = print_char(args, len);
 			break;
 		case 's':
-			print_str(args);
-			break;
-		case 'd':
-			print_int(arg);
+			len = print_str(args, len);
 			break;
 		case '%':
 			_putchar(c);
+			len += _putchar(c);
+			break;
+		case 'd':
+		case 'i':
+			len = print_num(args, len);
 			break;
 		default:
-			_putchar(b);
-			_putchar(c);
+			len += _putchar(b);
+			len += _putchar(c);
 			break;
 	}
-	return (0);
+	return (len);
 }
