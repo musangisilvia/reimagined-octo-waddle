@@ -10,13 +10,7 @@
 int _putchar(int c);
 int _printf(const char *format, ...);
 
-typedef struct op
-{
-	char *op;
-	int (*f)(va_list args);
-} op_t;
-
-int (*get_print_func(char *c))(va_list args); 
+int get_print_func(char, char, va_list args); 
 int print_char(va_list args);
 int print_str(va_list args);
 

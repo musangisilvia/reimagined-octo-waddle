@@ -10,9 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0, j = 0;
-	int (*get_ptr)(va_list);
-	char *c = NULL;
+	int i = 0;
 
 	va_start(args, format);
 
@@ -26,24 +24,9 @@ int _printf(const char *format, ...)
 		else 
 		{
 			i++;
-			c[j] = (char)format[i];
 			/*Function to check specifier and run correct print*/
-			get_ptr =  get_print_func(c);
-			if (get_ptr == NULL)
-			{
-				if (c == '\0')
-					_putchar(format[i - 1]);
-					break;
-				_putchar(format[i - 1]);
-				_putchar(format[i]);
-				i++;
-			}
-			else
-			{
-				/*Call the correct print function with args*/
-				get_ptr(args);
-				i++;
-			}
+			get_print_func(format[i],format[i - 1], args);
+			i++;
 		}
 	}
 	return (0); /*Supposed to be the length*/

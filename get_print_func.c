@@ -7,22 +7,25 @@
   * Return: Pointer to correct print function
   */
 
-int (*get_print_func(char *c))(va_list args)
+int get_print_func(char c, char b, va_list args)
 {
-	op_t ops[] = {
-		{"c", print_char},
-		{"s", print_str},
-		{NULL, NULL}
-	};
-	int i;
-
-	i = 0;
-	while (i < 3)
+	
+	switch (c)
 	{
-		if (c[0] == ops[i].op[0])
-			return (ops[i].f);
-		i++;
+		case 'c':
+			print_char(args);
+			break;
+		case 's':
+			print_str(args);
+			break;
+		case '%':
+			_putchar(b);
+			_putchar(c);
+			break;
+		default:
+			_putchar(b);
+			_putchar(c);
+			break;
 	}
-
-	return (NULL);
+	return (0);
 }
