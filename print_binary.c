@@ -8,7 +8,7 @@
   */
 int print_binary(int n, int len)
 {
-	if(n / 2 != 0)
+	if (n / 2 != 0)
 	{
 		print_binary(n / 2, len);
 	}
@@ -18,12 +18,19 @@ int print_binary(int n, int len)
 	return (len);
 }
 
-
-int print_unsigned(va_list args, int len)
+/**
+  *print_positive - only selected positive numbers to convert to binary.
+  *@args: list of arguments.
+  *@len: number of chars to be printed.
+  *
+  *Return: len
+  */
+int print_positive(va_list args, int len)
 {
 	int n;
+
 	n = va_arg(args, int);
 	if (n < 0)
-		return (len);	
+		return (len);
 	return (print_binary(n, len));
 }
