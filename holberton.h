@@ -24,5 +24,7 @@ int print_heX(va_list args, int len);
 int print_unsignd(va_list args, int len);
 int print_octal(va_list args, int len);
 int print_rot13(va_list args, int len);
+int print_b(va_list args, int len);
+int print_binary(unsigned int, int);
 
 #endif

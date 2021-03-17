@@ -27,8 +27,9 @@ int main(void)
 	_printf("%d\n", len1);
 	len1 = _printf("Rot13: %R\n", "Musangi");
 	_printf("%d\n", len1);
+	len1 = _printf("Binary: %b\n", 10);
+	_printf("%d\n", len1);
 	
-
 
 	return (0);
 }

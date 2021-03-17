@@ -17,12 +17,13 @@ int (*get_print_func(char c))(va_list, int)
 		{'o', print_octal},
 		{'x', print_hex},
 		{'X', print_heX},
-		{'R', print_rot13}
+		{'R', print_rot13},
+		{'b', print_b}
 	};
 
 	int i;
 
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < 10; i++)
 	{
 		if (c == specifics[i].spec)
 		{
