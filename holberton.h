@@ -19,5 +19,10 @@ int print_int(va_list, int);
 int _putchar_int(int, int);
 int print_numbers(unsigned long n, unsigned int base, const char *digits);
 unsigned int find_length(unsigned int, int);
+int print_hex(va_list args, int len);
+int print_heX(va_list args, int len);
+int print_unsignd(va_list args, int len);
+int print_octal(va_list args, int len);
+int print_rot13(va_list args, int len);
 
 #endif

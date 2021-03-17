@@ -12,12 +12,17 @@ int (*get_print_func(char c))(va_list, int)
 		{'c', print_ch},
 		{'s', print_str},
 		{'d', print_int},
-		{'i', print_int}
+		{'i', print_int},
+		{'u', print_unsignd},
+		{'o', print_octal},
+		{'x', print_hex},
+		{'X', print_heX},
+		{'R', print_rot13}
 	};
 
 	int i;
 
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < 9; i++)
 	{
 		if (c == specifics[i].spec)
 		{
