@@ -29,7 +29,11 @@ int get_print_func(char c, char b, va_list args, int len)
 			len = print_num(args, len);
 			break;
 		case 'b':
+<<<<<<< HEAD
 			len = print_positive(args, len);
+=======
+			len = print_bin(args, len);
+>>>>>>> 3ade680fa08549a5770a3258115aa0eb9ded6db5
 			break;
 		default:
 			len += _putchar(b);
